@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Task Tracker</h1>
+            <p class="subtitle">Manage your projects and tasks efficiently</p>
+        </header>
+
+        <main>
+            <!-- Navigation Tabs -->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="projects">Projects</button>
+                <button class="tab-button" data-tab="tasks">All Tasks</button>
+            </div>
+
+            <!-- Projects Tab -->
+            <section id="projects" class="tab-content active">
+                <div class="section-header">
+                    <h2>Projects</h2>
+                    <button class="btn btn-primary" id="newProjectBtn">+ New Project</button>
+                </div>
+
+                <!-- New Project Form -->
+                <div id="projectForm" class="form-container hidden">
+                    <h3>Create New Project</h3>
+                    <form id="createProjectForm">
+                        <input type="text" id="projectName" placeholder="Project Name" required>
+                        <textarea id="projectDesc" placeholder="Description" rows="3"></textarea>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success">Create</button>
+                            <button type="button" class="btn btn-secondary" id="cancelProjectBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Projects List -->
+                <div id="projectsList" class="projects-grid">
+                    <p class="loading">Loading projects...</p>
+                </div>
+            </section>
+
+            <!-- Tasks Tab -->
+            <section id="tasks" class="tab-content">
+                <div class="section-header">
+                    <h2>All Tasks</h2>
+                    <button class="btn btn-primary" id="newTaskBtn">+ New Task</button>
+                </div>
+
+                <!-- New Task Form -->
+                <div id="taskForm" class="form-container hidden">
+                    <h3>Create New Task</h3>
+                    <form id="createTaskForm">
+                        <select id="taskProject" required>
+                            <option value="">Select Project</option>
+                        </select>
+                        <input type="text" id="taskTitle" placeholder="Task Title" required>
+                        <textarea id="taskDesc" placeholder="Description" rows="3"></textarea>
+                        <div class="form-row">
+                            <select id="taskPriority">
+                                <option value="low">Low Priority</option>
+                                <option value="medium" selected>Medium Priority</option>
+                                <option value="high">High Priority</option>
+                            </select>
+                            <input type="date" id="taskDueDate">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success">Create</button>
+                            <button type="button" class="btn btn-secondary" id="cancelTaskBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tasks List -->
+                <div id="tasksList" class="tasks-list">
+                    <p class="loading">Loading tasks...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div id="projectDetail"></div>
+            <div id="projectTasks" class="project-tasks">
+                <h3>Project Tasks</h3>
+                <button class="btn btn-primary btn-sm" id="addTaskBtn">+ Add Task</button>
+                <div id="projectTasksList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
