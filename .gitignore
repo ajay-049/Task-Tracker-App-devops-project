@@ -48,8 +48,7 @@ Thumbs.db
 docker-compose.override.yml
 
 node_modules/
-.env
-.github/
+.env 
 .idea/
 .vscode/
 *.log
