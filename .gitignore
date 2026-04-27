@@ -46,3 +46,15 @@ Thumbs.db
 
 # Docker overrides
 docker-compose.override.yml
+
+node_modules/
+.env
+.github/
+.idea/
+.vscode/
+*.log
+dist/
+build/
+coverage/
+
+
