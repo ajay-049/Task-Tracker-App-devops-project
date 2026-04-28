@@ -5,7 +5,8 @@ FROM nginx:alpine
 COPY . /usr/share/nginx/html
 
 # Custom Nginx config file copy karein
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 
