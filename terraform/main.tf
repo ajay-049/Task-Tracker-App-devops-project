@@ -59,7 +59,7 @@ resource "aws_security_group" "task_tracker_sg" {
 # 3. EC2 Instance (Server) Banana
 resource "aws_instance" "task_tracker_server" {
   ami           = "ami-0dee22c13ea7a9a67" # Ubuntu 24.04 AMI (Mumbai region)
-  instance_type = "t3.micro"             # Free Tier
+  instance_type = "t3.small"             # Free Tier
 
   # Upar banaye gaye Security group ko is server se jodna
   vpc_security_group_ids = [aws_security_group.task_tracker_sg.id]
