@@ -1,5 +1,5 @@
 // API Base URL
-const API_URL = 'http://35.154.254.223:5000/api';
+const API_URL = 'http://13.127.8.99:5000/api';
 
 // DOM Elements
 const projectsTab = document.getElementById('projects');
